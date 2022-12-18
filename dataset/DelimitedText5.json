@@ -1,0 +1,44 @@
+{
+	"name": "DelimitedText5",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureBlobStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"folderPath": "output",
+				"container": "raw"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "connectionId",
+				"type": "String"
+			},
+			{
+				"name": "ApplicationName",
+				"type": "String"
+			},
+			{
+				"name": "storageAccount",
+				"type": "String"
+			},
+			{
+				"name": "RawPath",
+				"type": "String"
+			},
+			{
+				"name": "LastUpdatedTime",
+				"type": "String"
+			}
+		]
+	}
+}
