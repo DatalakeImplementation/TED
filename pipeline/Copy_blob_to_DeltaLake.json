@@ -130,7 +130,14 @@
 						{
 							"name": "Copy data1",
 							"type": "Copy",
-							"dependsOn": [],
+							"dependsOn": [
+								{
+									"activity": "Copy_blob_delta_table",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
 							"policy": {
 								"timeout": "0.12:00:00",
 								"retry": 0,
@@ -187,7 +194,13 @@
 							"outputs": [
 								{
 									"referenceName": "AzureSynapseAnalyticsTable1",
-									"type": "DatasetReference"
+									"type": "DatasetReference",
+									"parameters": {
+										"table_name": {
+											"value": "@first(split(item(),'.'))",
+											"type": "Expression"
+										}
+									}
 								}
 							]
 						}
