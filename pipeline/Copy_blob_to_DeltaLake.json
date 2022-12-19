@@ -117,7 +117,7 @@
 										"type": "Expression"
 									},
 									"fileName": {
-										"value": "@item()",
+										"value": "@item().name",
 										"type": "Expression"
 									}
 								}
@@ -179,7 +179,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"file_name": {
-											"value": "@item()",
+											"value": "@item().name",
 											"type": "Expression"
 										}
 									}
@@ -191,7 +191,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"table_name": {
-											"value": "@first(split(item(),'.'))",
+											"value": "@first(split(item().name,'.'))",
 											"type": "Expression"
 										}
 									}
