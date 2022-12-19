@@ -11,7 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": "Config.csv",
-				"folderPath": "Config",
+				"folderPath": "config_file",
 				"container": "raw"
 			},
 			"columnDelimiter": ",",
