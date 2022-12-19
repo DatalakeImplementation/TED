@@ -1,0 +1,9 @@
+{
+	"name": "Ahold-dev-project",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "63777aee-9aae-4822-948e-6ac83f9cd509",
+		"tenantId": "51704d9f-e9e9-4b21-a576-c4881f3b3dd8"
+	}
+}
