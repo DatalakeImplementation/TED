@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Lookup1",
+				"name": "Config data Lookup",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -27,17 +27,17 @@
 						}
 					},
 					"dataset": {
-						"referenceName": "DelimitedText1",
+						"referenceName": "Config_file_DS",
 						"type": "DatasetReference"
 					}
 				}
 			},
 			{
-				"name": "Get Metadata2",
+				"name": "Source file info",
 				"type": "GetMetadata",
 				"dependsOn": [
 					{
-						"activity": "Lookup1",
+						"activity": "Config data Lookup",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -53,7 +53,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"dataset": {
-						"referenceName": "DelimitedText3",
+						"referenceName": "Source_DS",
 						"type": "DatasetReference"
 					},
 					"fieldList": [
@@ -63,7 +63,7 @@
 						"type": "AzureBlobStorageReadSettings",
 						"recursive": true,
 						"modifiedDatetimeStart": {
-							"value": "@activity('Lookup1').output.firstRow.LastUpdatedTime",
+							"value": "@activity('Config data Lookup').output.firstRow.LastUpdatedTime",
 							"type": "Expression"
 						},
 						"modifiedDatetimeEnd": {
@@ -78,11 +78,11 @@
 				}
 			},
 			{
-				"name": "ForEach1",
+				"name": "Iterating each file",
 				"type": "ForEach",
 				"dependsOn": [
 					{
-						"activity": "Get Metadata2",
+						"activity": "Source file info",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -137,7 +137,7 @@
 				"type": "DatabricksNotebook",
 				"dependsOn": [
 					{
-						"activity": "ForEach1",
+						"activity": "Iterating each file",
 						"dependencyConditions": [
 							"Succeeded"
 						]
