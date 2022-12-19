@@ -91,7 +91,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('Get Metadata2').output.childItems",
+						"value": "@activity('Source file info').output.childItems",
 						"type": "Expression"
 					},
 					"activities": [
@@ -111,7 +111,7 @@
 								"notebookPath": "/Copy_blob_delta_table",
 								"baseParameters": {
 									"rawPath": {
-										"value": "@activity('Lookup1').output.firstRow.rawPath",
+										"value": "@activity('Config data Lookup').output.firstRow.rawPath",
 										"type": "Expression"
 									},
 									"fileName": {
@@ -127,6 +127,10 @@
 										"type": "Expression"
 									}
 								}
+							},
+							"linkedServiceName": {
+								"referenceName": "AzureDatabricks1",
+								"type": "LinkedServiceReference"
 							}
 						}
 					]
@@ -155,10 +159,14 @@
 					"notebookPath": "/Update_config",
 					"baseParameters": {
 						"config_path": {
-							"value": "@activity('Lookup1').output.firstRow.config_path",
+							"value": "@activity('Config data Lookup').output.firstRow.configPath",
 							"type": "Expression"
 						}
 					}
+				},
+				"linkedServiceName": {
+					"referenceName": "AzureDatabricks1",
+					"type": "LinkedServiceReference"
 				}
 			}
 		],
