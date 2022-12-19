@@ -160,24 +160,11 @@
 								},
 								"sink": {
 									"type": "SqlDWSink",
-									"writeBehavior": "Upsert",
-									"upsertSettings": {
-										"keys": [],
-										"interimSchemaName": "ahold_dxc"
-									},
-									"sqlWriterUseTableLock": false,
+									"allowCopyCommand": true,
 									"tableOption": "autoCreate",
 									"disableMetricsCollection": false
 								},
-								"enableStaging": false,
-								"translator": {
-									"type": "TabularTranslator",
-									"typeConversion": true,
-									"typeConversionSettings": {
-										"allowDataTruncation": true,
-										"treatBooleanAsNumber": false
-									}
-								}
+								"enableStaging": false
 							},
 							"inputs": [
 								{
