@@ -119,14 +119,6 @@
 									"fileName": {
 										"value": "@item()",
 										"type": "Expression"
-									},
-									"deltaTableName": {
-										"value": "@first(split(item(),'.'))",
-										"type": "Expression"
-									},
-									"deltaSchema": {
-										"value": "@pipeline().parameters.Source",
-										"type": "Expression"
 									}
 								}
 							},
