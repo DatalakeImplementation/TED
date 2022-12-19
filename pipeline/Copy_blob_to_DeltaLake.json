@@ -4,6 +4,7 @@
 		"activities": [
 			{
 				"name": "Config data Lookup",
+				"description": "To read the config data",
 				"type": "Lookup",
 				"dependsOn": [],
 				"policy": {
@@ -34,6 +35,7 @@
 			},
 			{
 				"name": "Source file info",
+				"description": "No of files",
 				"type": "GetMetadata",
 				"dependsOn": [
 					{
